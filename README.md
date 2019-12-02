@@ -13,4 +13,5 @@ Space -> O(n)?
 I still don't know how to get the exact valuse I assume we will cover that
 
 ## Solution
-[Code](./challenges/array-reverse.py)
+[Code](./challenges/array-reverse.py)  
+[Image](./assets/Reverse-Array.jpg)
