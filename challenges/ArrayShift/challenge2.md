@@ -9,6 +9,6 @@ With a list and value as the input make a function that will insert the value in
 I still don't know how to get the exact valuse I assume we will cover that
 
 ## Solution
+![Image](../../assets/Array-Shift.jpg)
 [Code](../challenges/array_shift.py)  
 [Tests](../challenges/test_array_shift.py)  
-[Image](../assets/Array-Shift.jpg)
