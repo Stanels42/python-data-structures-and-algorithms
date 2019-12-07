@@ -1,3 +1,4 @@
+import pytest
 from array_binary_search import binary_search
 
 def test_example_one():
@@ -15,6 +16,6 @@ def test_strings():
   actual = binary_search(['a','b','c','d','e','f'], 'c')
   assert expected == actual
 
-def test_string_typeError():
-  with pytest.raises(TypeError):  # Pass in the expected error
-    result = insert_shift_array('String', 'r')
+# def test_string_typeError():
+#   with pytest.raises(TypeError):  # Pass in the expected error
+#     result = insert_shift_array('String', 'r')
