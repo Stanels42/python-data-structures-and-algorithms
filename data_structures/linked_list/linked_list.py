@@ -111,6 +111,19 @@ class Linked_List:
     raise ValueError
 
 
+  def kth_from_end(self, k):
+    """Takes in an index in the list and returns the value of the node in that position from the end. If no value is found an error is raised"""
+    end = current = self.head
+    count = 0
+    while end:
+      current = current.next if count > k else current
+      end = end.next
+      count += 1
+    if count > k:
+      return current.value
+    raise ValueError
+
+
   def get_length(self):
     """Returns the current length of the linked list"""
     return self._length

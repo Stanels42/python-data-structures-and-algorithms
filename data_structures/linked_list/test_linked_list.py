@@ -156,6 +156,28 @@ def test_insert_after_not_found(pop_list):
   with pytest.raises(ValueError):
     pop_list.insert_after(50,15)
 
+
+##################
+## Kth From End ##
+##################
+
+def test_kth_first_value(pop_list):
+  assert pop_list.kth_from_end(4) == 5
+
+def test_kth_mid_value(pop_list):
+  assert pop_list.kth_from_end(2) == 3
+
+def test_kth_last_value(pop_list):
+  assert pop_list.kth_from_end(0) == 1
+
+def test_kth_outofbound(pop_list):
+  with pytest.raises(ValueError):
+    pop_list.kth_from_end(10)
+
+def test_kth_empty_list(empty_list):
+  with pytest.raises(ValueError):
+    empty_list.kth_from_end(1)
+
 ###############
 ## Test List ##
 ###############
@@ -167,6 +189,6 @@ def empty_list():
 @pytest.fixture()
 def pop_list():
   ll = Linked_List()
-  for i in range(0, 6):
+  for i in range(1, 6):
     ll.insert(i)
   return ll
