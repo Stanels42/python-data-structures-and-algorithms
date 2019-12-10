@@ -10,13 +10,13 @@ class Linked_List:
 
   def __str__(self):
 
-    output = "This Linked List is " + str(self._length) + " Node(s) Long\n"
+    output = "This Linked List is " + str(self._length) + " Node(s) Long\nHead->"
 
     current = self.head
     while current:
-      output += str(current) + "\n"
+      output += "[" + str(current) + "]->"
       current = current.next
-    return output
+    return output + 'x'
 
 
   def insert(self, value):
@@ -53,24 +53,22 @@ class Linked_List:
 
 
   def append(self, value):
+    """Takes in a value and adds it to the end of the list"""
 
     if not self.head:
-      self.insert(value)
-      return
+      return self.insert(value)
 
-    else:
+    value = Node.is_node(value)
 
-      if not isinstance(value, Node):
-        value = Node(value)
-
-      current = self.head
-      while current.next:
-        current = current.next
-      current.next = value
-      self._length += 1
+    current = self.head
+    while current.next:
+      current = current.next
+    current.next = value
+    self._length += 1
 
 
   def insert_after(self, search_value, new_value):
+    """Takes in a search value and a new value to create a new node with. If the list contains the search value the new node is inserted after that value. Otherwise raise an error"""
 
     current = self.head
 
@@ -89,6 +87,8 @@ class Linked_List:
 
 
   def insert_before(self, search_value, new_value):
+    """Takes in a search term and a new value. If the list contains the search term it will insert a new node infront of it. Otherwise raise an error"""
+
     if not self.head:
       raise ValueError
 

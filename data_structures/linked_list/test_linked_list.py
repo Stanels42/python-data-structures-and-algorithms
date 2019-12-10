@@ -73,14 +73,12 @@ def test_includes_string(empty_list):
 ###########################
 
 def test_print_empty_list(empty_list):
-  expected = """This Linked List is 0 Node(s) Long\n"""
+  expected = """This Linked List is 0 Node(s) Long\nHead->x"""
   assert expected == str(empty_list)
 
 def test_print_filled_list(empty_list):
   expected = """This Linked List is 2 Node(s) Long
-2
-1
-"""
+Head->[2]->[1]->x"""
   empty_list.insert(1)
   empty_list.insert(2)
   assert expected == str(empty_list)
@@ -128,7 +126,7 @@ def test_insert_before_front(empty_list):
   assert empty_list.head.value == 1
 
 def test_insert_before_middle(pop_list):
-  pop_list.insert_before(10, 50)
+  pop_list.insert_before(5, 50)
   assert pop_list.includes(50)
 
 def test_insert_before_empty(empty_list):
@@ -146,8 +144,8 @@ def test_insert_after_front(empty_list):
   assert empty_list.includes(2)
 
 def test_insert_after_middle(pop_list):
-  assert pop_list.includes(15)
-  pop_list.insert_after(15,50)
+  assert pop_list.includes(5)
+  pop_list.insert_after(5,50)
   assert pop_list.includes(50)
 
 def test_insert_after_empty(empty_list):
@@ -169,6 +167,6 @@ def empty_list():
 @pytest.fixture()
 def pop_list():
   ll = Linked_List()
-  for i in range(0, 16):
+  for i in range(0, 6):
     ll.insert(i)
   return ll
