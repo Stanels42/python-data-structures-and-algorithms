@@ -34,3 +34,19 @@ Insert Before: In: `Search Term, Input Value` -> Out: `True/Error`  <br>
 Insert After: In: `Search Term, Input Value` -> Out: `True/Error`  <br>
 
 ![](../../assets/Insert-Linked-List.jpg)
+
+# <br>
+# Kth Value From the End
+## Challenge
+Create a method that takes in an index and returns the value of the node at that position. If the position is outside of the bounds of the list the function should raise an error.
+
+## Approach & Efficiency
+#### kth_from_end:
+* Time: `O(n)`<br>
+* Space: `O`<br>
+
+## APIs
+kth_from_end: In: `Position` -> Out: `Value/Error`<br>
+
+
+![](../../assets/Kth-From-End.png)
