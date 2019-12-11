@@ -178,6 +178,34 @@ def test_kth_empty_list(empty_list):
   with pytest.raises(ValueError):
     empty_list.kth_from_end(1)
 
+################
+## Test Merge ##
+################
+
+def len_list(length):
+  ll = Linked_List()
+  for i in range(0, length):
+    ll.append(i)
+  return ll
+
+@pytest.mark.parametrize("ll_one, ll_two, expected", [
+  (len_list(3),len_list(3),"0,0,1,1,2,2,"),
+  (len_list(7),len_list(3),"0,0,1,1,2,2,3,4,5,6,"),
+  (len_list(3),len_list(7),"0,0,1,1,2,2,3,4,5,6,"),
+  (len_list(0),len_list(0),""),
+  (len_list(3),len_list(0),"0,1,2,"),
+  (len_list(0),len_list(3),"0,1,2,"),
+])
+def test_merge_linked_list(ll_one, ll_two, expected):
+  merged_current = Linked_List.merge_lists(ll_one, ll_two)
+
+  output = ''
+  while merged_current:
+    output += str(merged_current.value) + ','
+    merged_current = merged_current.next
+
+  assert expected == output
+
 ###############
 ## Test List ##
 ###############
