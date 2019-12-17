@@ -19,6 +19,15 @@ class Linked_List:
     return output + 'x'
 
 
+  def __repr__(self):
+    output = ''
+
+    current = self.head
+    while current:
+      output += str(current.value) + ','
+      current = current.next
+    return output
+
   def insert(self, value):
     """Adds a given value to the head of the linked list"""
 
@@ -128,3 +137,27 @@ class Linked_List:
     """Returns the current length of the linked list"""
     return self._length
 
+
+  @staticmethod
+  def merge_lists(ll_one, ll_two):
+    """Take in 2 Linked Lists and returns the head of the new merged link list
+    I am aware that the instructions say to use a new file. I cleared the practice of static methods with JB"""
+    ll_one_prev = ll_one_current = ll_one.head
+    ll_two_current = ll_two.head
+
+    if not ll_one_prev:
+      return ll_two_current
+
+    while ll_one_current or ll_two_current:
+
+      if ll_one_current:
+        ll_one_prev = ll_one_current
+        ll_one_current = ll_one_current.next
+
+      if ll_two_current:
+        ll_two_prev = ll_two_current
+        ll_two_current = ll_two_current.next
+        ll_two_prev.next = ll_one_current
+        ll_one_prev.next = ll_one_prev = ll_two_prev
+
+    return ll_one.head

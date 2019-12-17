@@ -50,3 +50,20 @@ kth_from_end: In: `Position` -> Out: `Value/Error`<br>
 
 
 ![](../../assets/Kth-From-End.png)
+
+# <br>
+# Merge Linked Lists
+**I know that the instruction say to use a new file. I cleared this with JB so I could practice static methods**
+## Challenge
+Create a method that takes in 2 linked lists as the inputs and returns the head of the merged list as an output. The lists should be mreged in a zipper fasion (one then the other).
+
+## Approach & Efficiency
+#### mrege_linked_lists:
+* Time: `O(n)`<br>
+* Space: `O(1)`<br>
+
+## APIs
+merge_linked_lists: In: `ll_one, ll_two` -> Out: `merged_list_head`<br>
+
+
+![](../../assets/Merge-Linked-List.jpg)
