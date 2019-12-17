@@ -18,7 +18,7 @@ class Queue:
 
   def deque(self):
     if self.is_empty():
-      return 'Error'
+      raise EmptyListError('The List is Empty')
     removed = self.front
     self.front = self.front.next
     return removed
@@ -26,9 +26,12 @@ class Queue:
   def peek(self):
     if not self.is_empty():
       return self.front.value
-    return 'Error'
+    raise EmptyListError('The List is Empty')
 
   def is_empty(self):
     if self.front:
       return False
     return True
+
+class EmptyListError(AssertionError):
+  pass

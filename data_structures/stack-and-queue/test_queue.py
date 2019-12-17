@@ -1,10 +1,11 @@
+import pytest
 
 ############################
 ## Import Stack And Nodes ##
 ############################
 
 from node import Node
-from queue import Queue
+from queue import Queue, EmptyListError
 
 ##################
 ## Test Imports ##
@@ -23,7 +24,8 @@ def test_queue():
 test_queue = Queue()
 
 def test_stack_methods():
-  assert test_queue.peek() == 'Error'
+  with pytest.raises(EmptyListError):
+    test_queue.peek()
   assert test_queue.is_empty()
 
 def test_stack_enque():
@@ -44,5 +46,7 @@ def test_deque_all():
   test_queue.deque()
   test_queue.deque()
   assert test_queue.is_empty()
-  assert test_queue.peek() == 'Error'
-  assert test_queue.deque() == 'Error'
+  with pytest.raises(EmptyListError):
+    test_queue.peek()
+  with pytest.raises(EmptyListError):
+    test_queue.deque()

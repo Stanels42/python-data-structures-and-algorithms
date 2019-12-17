@@ -1,10 +1,11 @@
+import pytest
 
 ############################
 ## Import Stack And Nodes ##
 ############################
 
 from node import Node
-from stack import Stack
+from stack import Stack, EmptyListError
 
 ##################
 ## Test Imports ##
@@ -23,26 +24,29 @@ def test_stack():
 test_stack = Stack()
 
 def test_stack_methods():
-  assert test_stack.peek() == 'Error'
+  with pytest.raises(EmptyListError):
+    test_stack.peek()
   assert test_stack.is_empty()
 
 def test_stack_enque():
-  test_stack.enque(1)
+  test_stack.push(1)
   assert not test_stack.is_empty()
   assert test_stack.peek() == 1
-  test_stack.enque(2)
-  test_stack.enque(3)
-  test_stack.enque(4)
+  test_stack.push(2)
+  test_stack.push(3)
+  test_stack.push(4)
   assert test_stack.peek() == 4
 
 def test_deque():
-  assert test_stack.deque().value == 4
+  assert test_stack.pop() == 4
   assert test_stack.peek() == 3
 
 def test_deque_all():
-  test_stack.deque()
-  test_stack.deque()
-  test_stack.deque()
+  test_stack.pop()
+  test_stack.pop()
+  test_stack.pop()
   assert test_stack.is_empty()
-  assert test_stack.peek() == 'Error'
-  assert test_stack.deque() == 'Error'
+  with pytest.raises(EmptyListError):
+    test_stack.peek()
+  with pytest.raises(EmptyListError):
+    test_stack.pop()
