@@ -29,24 +29,24 @@ def test_stack_methods():
   assert test_queue.is_empty()
 
 def test_stack_enque():
-  test_queue.enque(1)
+  test_queue.enqueue(1)
   assert not test_queue.is_empty()
   assert test_queue.peek() == 1
-  test_queue.enque(2)
-  test_queue.enque(3)
-  test_queue.enque(4)
+  test_queue.enqueue(2)
+  test_queue.enqueue(3)
+  test_queue.enqueue(4)
   assert test_queue.peek() == 1
 
 def test_deque():
-  assert test_queue.deque().value == 1
+  assert test_queue.dequeue() == 1
   assert test_queue.peek() == 2
 
 def test_deque_all():
-  test_queue.deque()
-  test_queue.deque()
-  test_queue.deque()
+  test_queue.dequeue()
+  test_queue.dequeue()
+  test_queue.dequeue()
   assert test_queue.is_empty()
   with pytest.raises(EmptyListError):
     test_queue.peek()
   with pytest.raises(EmptyListError):
-    test_queue.deque()
+    test_queue.dequeue()

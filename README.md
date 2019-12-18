@@ -5,6 +5,10 @@ Algorithm and code challenge test space for 401 Python
 #### [Challenge 1](./challenges/ArrayReverse/challenge1.md)
 #### [Challenge 2](./challenges/ArrayShift/challenge2.md)
 #### [Binary Search](./challenges/ArrayBinarySearch/challenge3.md)
+#### [Fifo Animal Shelter](./challenges/fifo_animal_shelter/README.md)
+
+
+## __Data Structures__
 #### [Linked Lists](./data_structures/linked_list/README.md)
 <!-- #### [Challenge 5](./challenges/challenge5.md)
 #### [Challenge 6](./challenges/challenge6.md)
