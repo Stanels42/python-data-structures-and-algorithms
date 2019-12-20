@@ -4,6 +4,7 @@ from tree import BinaryTree
 class BinarySearchTree(BinaryTree):
 
   def add(self, value, node = None):
+    """Add a node to a tree based on it's value"""
     if not self._root:
       self._root = _Node(value)
       return
@@ -23,6 +24,7 @@ class BinarySearchTree(BinaryTree):
 
 
   def contains(self, value, node = None):
+    """Find a node on a given tree in O(h) time"""
     if not self._root:
       return False
 
@@ -41,29 +43,3 @@ class BinarySearchTree(BinaryTree):
         return self.contains(value, node.right)
       else:
         return False
-
-# def basetree():
-#   t = BinaryTree()
-#   t.add(1)
-#   t.add(2)
-#   t.add(3)
-#   return t
-
-def B_S_T():
-  tree = BinarySearchTree()
-  tree.add(20)
-  tree.add(10)
-  tree.add(30)
-  tree.add(5)
-  tree.add(15)
-  tree.add(25)
-  tree.add(35)
-  return tree
-
-if __name__ == "__main__":
-  # base_tree = basetree()
-  BST = B_S_T()
-
-  # base_tree.in_order()
-  print(BST.in_order())
-  print(BST.in_order())
