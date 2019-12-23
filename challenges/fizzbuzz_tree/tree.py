@@ -33,7 +33,7 @@ class BinaryTree:
       current = node_queue.dequeue()
 
 
-  def _default_action(self,value, arr=None):
+  def _default_action(self,value=None, arr=None):
     """The default action for the order functions that returns a list contains all given values of the tree"""
     arr = arr or []
     arr.append(value)

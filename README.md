@@ -6,6 +6,7 @@ Algorithm and code challenge test space for 401 Python
 #### [Challenge 2](./challenges/ArrayShift/challenge2.md)
 #### [Binary Search](./challenges/ArrayBinarySearch/challenge3.md)
 #### [Fifo Animal Shelter](./challenges/fifo_animal_shelter/README.md)
+#### [Fizz Buzz Tree](./challenges/fizzbuzz_tree/README.md)
 
 
 ## __Data Structures__
@@ -16,4 +17,4 @@ Algorithm and code challenge test space for 401 Python
 <!-- #### [Challenge 8](./challenges/challenge8.md) -->
 <!-- #### [Challenge 9](./challenges/challenge9.md) -->
 <!-- #### [Challenge 10](./challenges/challenge10.md) -->
-<!-- #### [Challenge 11](./challenges/challenge11.md) --> -->
+<!-- #### [Challenge 11](./challenges/challenge11.md) -->
