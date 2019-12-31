@@ -7,7 +7,7 @@ Algorithm and code challenge test space for 401 Python
 #### [Binary Search](./challenges/ArrayBinarySearch/challenge3.md)
 #### [Fifo Animal Shelter](./challenges/fifo_animal_shelter/README.md)
 #### [Fizz Buzz Tree](./challenges/fizzbuzz_tree/README.md)
-
+#### [Breadth First Tree](./challenges/breadth_first/README.md)
 
 ## __Data Structures__
 #### [Linked Lists](./data_structures/linked_list/README.md)
