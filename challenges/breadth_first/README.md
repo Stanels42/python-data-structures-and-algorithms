@@ -20,3 +20,26 @@ Traverse: In: `Tree` -> Out: `List`
 #### Other Helper Files
 * [Queue](./queue.py)
 
+![Image](../../assets/find_max_tree.jpg)
+
+# Breadth First Tree
+
+
+## Challenge
+Create a function that takes in a tree as an input and returns the max value within that tree. I can be assumed that each node in the tree contains Int values.
+
+## Approach & Efficiency
+Iterative: Time: `O(n)`  Space: `O(1)`
+Recursive: Time: `O(n)`  Space: `O(h)`
+
+## API
+Iterative: In: `Tree` -> Out: `Max Value`
+Recursive: In: `Tree` -> Out: `Max Value`
+
+## Solution
+#### [Code](./binary_tree.py)<br>
+#### [Tests](./test_breath_first.py)<br>
+#### Other Helper Files
+* [Queue](./queue.py)
+
+![Image](../../assets/find_max_tree.jpg)

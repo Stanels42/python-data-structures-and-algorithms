@@ -67,3 +67,35 @@ class BinaryTree:
     return lst
 
 
+def find_max_value(tree):
+  """Takes in a tree and returns a max value with in the tree."""
+  if not tree.get_root():
+    return None
+  q = Queue()
+  q.enqueue(tree.get_root())
+  max_val = tree.get_root().value
+  while not q.is_empty():
+    current = q.dequeue()
+    if current.left:
+      q.enqueue(current.left)
+    if current.right:
+      q.enqueue(current.right)
+    max_val = current.value if current.value > max_val else max_val
+  return max_val
+
+def find_max_recursive(tree):
+  """"""
+
+  def recurse(current):
+    max_val = current.value
+    if current.left:
+      left_max = recurse(current.left)
+      max_val = left_max if left_max > max_val else max_val
+    if current.right:
+      right_max = recurse(current.right)
+      max_val = right_max if right_max > max_val else max_val
+    return max_val
+
+  if not tree.get_root():
+    return None
+  return recurse(tree.get_root())
