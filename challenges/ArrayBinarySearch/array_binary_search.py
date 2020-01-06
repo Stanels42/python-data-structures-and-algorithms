@@ -11,8 +11,9 @@
 #     return mid
 
 def binary_search(arr, val):
-  left = 0
-  right = len(arr)
+  """Takes in a sorted list and a value. Preforms the Binary Search algorythem to see if the value is in the lsit."""
+  # Set the values to the end of the list
+  left,right = 0,len(arr)
 
   while not right <= left:
 
@@ -24,5 +25,5 @@ def binary_search(arr, val):
       right = mid
     else:
       return mid
-  
+
   return -1

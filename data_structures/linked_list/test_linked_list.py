@@ -3,7 +3,7 @@ import pytest
 
 ## Import Classes ##
 
-from Node import Node
+from node import Node
 from linked_list import Linked_List
 
 
