@@ -1,6 +1,8 @@
-from Node import Node
+from node import Node
 
 class Linked_List:
+  """Contains Functions:
+  STR: In: None  Out: List as str"""
 
   def __init__(self, head = None):
     """Can take in an existing linked list"""
@@ -92,14 +94,14 @@ class Linked_List:
 
       current = current.next
 
-    raise ValueError
+    return 'Error'
 
 
   def insert_before(self, search_value, new_value):
     """Takes in a search term and a new value. If the list contains the search term it will insert a new node infront of it. Otherwise raise an error"""
 
     if not self.head:
-      raise ValueError
+      return 'Error'
 
     elif self.head.value == search_value:
       self.insert(new_value)
@@ -117,7 +119,7 @@ class Linked_List:
 
       current = current.next
 
-    raise ValueError
+    return 'Error'
 
 
   def kth_from_end(self, k):
@@ -130,7 +132,7 @@ class Linked_List:
       count += 1
     if count > k:
       return current.value
-    raise ValueError
+    return 'Error'
 
 
   def get_length(self):
