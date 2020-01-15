@@ -4,7 +4,7 @@ import pytest
 ## Import Classes ##
 ####################
 
-from fifo_animal_shelter import Animal_Shelter, EmptyListError, NonShelterAnimal
+from fifo_animal_shelter import Animal_Shelter, NonShelterAnimal
 from pet import Pet, Cat, Dog, Fish
 
 ####################

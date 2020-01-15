@@ -9,6 +9,7 @@ Algorithm and code challenge test space for 401 Python
 #### [Fizz Buzz Tree](./challenges/fizzbuzz_tree/README.md)
 #### [Breadth First Tree](./challenges/breadth_first/README.md)
 #### [Insertion Sort](./challenges/insertion_sort/README.md)
+#### [Merge Sort](./challenges/merge_sort/README.md)
 
 ## __Data Structures__
 #### [Linked Lists](./data_structures/linked_list/README.md)
