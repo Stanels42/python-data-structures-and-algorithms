@@ -1,6 +1,6 @@
 ### [Home](../README.md)
 
-# Insertion Sort
+# Merge Sort
 Create a function that uses the merge sort algorithm to sort a list of values.
 
 ## Challenge

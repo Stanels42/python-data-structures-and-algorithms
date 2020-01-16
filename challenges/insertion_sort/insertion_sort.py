@@ -1,4 +1,5 @@
 from random import randint
+from copy import deepcopy
 
 def insertion_sort(arr):
   """
@@ -13,7 +14,8 @@ def insertion_sort(arr):
       n -= 1
 
 def shuffle(arr):
-  new_arr = []
-  while len(arr) > 0:
-    new_arr.append(arr.pop(randint(0, len(arr)-1)))
-  return new_arr
+  new_lst = deepcopy(arr)
+  for i in range(len(new_lst)):
+    rand = randint(i, len(new_lst) - 1)
+    new_lst[i], new_lst[rand] = new_lst[rand], new_lst[i]
+  return new_lst
