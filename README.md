@@ -10,6 +10,7 @@ Algorithm and code challenge test space for 401 Python
 #### [Breadth First Tree](./challenges/breadth_first/README.md)
 #### [Insertion Sort](./challenges/insertion_sort/README.md)
 #### [Merge Sort](./challenges/merge_sort/README.md)
+#### [Repeated Word](./challenges/repeated_word/README.md)
 
 ## __Data Structures__
 #### [Linked Lists](./data_structures/linked_list/README.md)
