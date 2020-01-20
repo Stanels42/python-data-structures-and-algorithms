@@ -57,3 +57,9 @@ def test_letters():
   new_lst = shuffle(lst)
   quick_sort(new_lst)
   assert lst == new_lst
+
+def test_mostly_single_value_list():
+  lst = [1,2,2,3,3,3,4,4,4,4,5,5,5,5,5,6,6,6,6,6,6]
+  new_lst = shuffle(lst)
+  quick_sort(new_lst)
+  assert lst == new_lst

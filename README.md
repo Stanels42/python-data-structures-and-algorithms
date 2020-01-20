@@ -15,9 +15,4 @@ Algorithm and code challenge test space for 401 Python
 #### [Linked Lists](./data_structures/linked_list/README.md)
 #### [Stacks and Queues](./data_structures/stack-and-queue/README.md)
 #### [Binary Search Tree](./data_structures/trees/README.md)
- <!-- #### [Challenge 6](./challenges/challenge6.md) -->
-<!-- #### [Challenge 7](./challenges/challenge7.md) -->
-<!-- #### [Challenge 8](./challenges/challenge8.md) -->
-<!-- #### [Challenge 9](./challenges/challenge9.md) -->
-<!-- #### [Challenge 10](./challenges/challenge10.md) -->
-<!-- #### [Challenge 11](./challenges/challenge11.md) -->
+#### [Hash Table](./data_structures/hash_table/README.md)
