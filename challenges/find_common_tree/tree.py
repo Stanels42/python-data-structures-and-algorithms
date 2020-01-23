@@ -53,7 +53,9 @@ class Tree:
         q.enqueue(current.left)
       else:
         current.left = self.Node(value)
+        return
       if current.right:
         q.enqueue(current.right)
       else:
         current.right = self.Node(value)
+        return

@@ -12,6 +12,7 @@ Algorithm and code challenge test space for 401 Python
 #### [Merge Sort](./challenges/merge_sort/README.md)
 #### [Repeated Word](./challenges/repeated_word/README.md)
 #### [Find Common Tree Values](./challenges/find_common_tree/README.md)
+#### [Left Join](./challenges/left_join/README.md)
 
 ## __Data Structures__
 #### [Linked Lists](./data_structures/linked_list/README.md)
