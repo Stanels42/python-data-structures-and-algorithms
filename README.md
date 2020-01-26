@@ -19,3 +19,4 @@ Algorithm and code challenge test space for 401 Python
 #### [Stacks and Queues](./data_structures/stack-and-queue/README.md)
 #### [Binary Search Tree](./data_structures/trees/README.md)
 #### [Hash Table](./data_structures/hash_table/README.md)
+#### [Graphs](./data_structures/graphs/README.md)
