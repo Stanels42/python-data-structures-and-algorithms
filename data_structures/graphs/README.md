@@ -41,3 +41,24 @@ Today's data structure is to create a graph. The corresponding methods in the gr
 `size`
   - In: None
   - Out: Number of vertices (`<int>`)
+
+# <br>
+## Breath First Traversal
+### Challenge
+Create a function that preforms a breath first traversal to create a list of all values in the graph
+### Approach
+My approach is to create 2 functions. The first is to do a traversal from a given vertex. This is a private function that is used to help in other functions. Next is the callable function. This is where the action function is defined. That function is used in the traverse function to create the output list.
+### API
+`breath_first`
+- `(<Vertex>)`
+- Call `__traverse`
+- Return: `List`
+
+`__traverse`
+- `(<Vertex>, action)`
+`action` is a function reference to an action to preform on each vertex
+
+### Efficacy
+`breath_first()`
+- Time: `O(n)`
+- Space: `O(n)`

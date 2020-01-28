@@ -1,3 +1,5 @@
+from collections import deque
+
 class Graph:
   """
   Methods of graph class:
@@ -65,7 +67,7 @@ class Graph:
 
   def get_vertices(self):
     """
-    Returns a list of all vertices
+    Returns a list of all vertices.
     In: None
     Out: list of all vertices in the graph
     """
@@ -81,6 +83,54 @@ class Graph:
     # Raise error if not valid vertex
     self.__valid_vertex(vertex)
     return self._adjacency_list[vertex]
+
+
+  def breath_first(self, vertex):
+    """
+    Traverse breath first form a given vertex
+    In: Vertex
+    Out: List of values that can be accessed through the graph.
+    """
+    output = []
+
+    def action(vertex):
+      output.append(vertex.value)
+
+    self.__traverse(vertex, action)
+
+    return output
+
+
+  def add_double_edge(self, vertex1, vertex2, weight=1):
+    """
+    Similar to add edge just adds it adds one going both ways.
+    In: 2 vertices and a weight
+    Out: None
+    """
+    self.add_edge(vertex1, vertex2, weight)
+    self.add_edge(vertex2, vertex1, weight)
+
+
+  def __traverse(self, vertex, action):
+    """
+    Takes in a starting vertex and an action. Will traverse the graph in a breath first order from the given vertex. The action is a function that is acted on each vertex.
+    """
+    self.__valid_vertex(vertex)
+
+    q = Queue()
+    q.enqueue(vertex)
+    visited = set([vertex])
+
+    while not q.empty():
+      current = q.dequeue()
+
+      for vert in self.get_neighbors(current):
+        vert = vert[0]
+        if vert not in visited:
+          visited.add(vert)
+          q.enqueue(vert)
+
+      action(current)
 
 
   def __valid_vertex(self, vertex):
@@ -100,3 +150,19 @@ class Vertex:
 
   def __str__(self):
     return self.value
+
+class Queue:
+  """
+  Queue class used in the implamentation of the breath first traversal
+  """
+  def __init__(self):
+    self.dq = deque()
+
+  def enqueue(self, value):
+    self.dq.appendleft(value)
+
+  def dequeue(self):
+    return self.dq.pop()
+
+  def empty(self):
+    return len(self.dq) == 0
