@@ -111,6 +111,44 @@ class Graph:
     self.add_edge(vertex2, vertex1, weight)
 
 
+  def get_edge(self, v_lst):
+    """
+    Takes in a list of values in the graph and retruns the True or False on if you can fallow all the Vertices and the sum of the weight when traveling between them.
+    In: List of names contained in the vertices.
+    Out: tuple(True/False, sum <int>)
+    """
+
+    def contains_vertex(value, lst):
+      """Helper function for the get edge method that can find it the string value is a value of a neighbor node"""
+      for vertex in lst:
+        # Used when looking at the list of edges for a vertex
+        if isinstance(vertex, tuple):
+          if vertex[0].value == value:
+            return vertex
+        # Used when trying to see if the vertex is in the graph at all.
+        elif vertex.value == value:
+          return vertex
+      # Need to return the value and price for the inner loop
+      return False, 0
+
+    # Check if the first value is the value of a vertex in the graph.
+    current = contains_vertex(v_lst[0], self._adjacency_list.keys())
+    if isinstance(current, Vertex):
+      travel_sum = 0
+      # Ignore the first position because it's handeled above
+      for index in range(1,len(v_lst)):
+        # See if the next value is a neighbor and get the weight of the connection.
+        current,cost = contains_vertex(v_lst[index], self.get_neighbors(current))
+        travel_sum += cost
+        # Current is False if the vertex is not a neighbor of the current Vertex
+        if not current:
+          return (False, '$0')
+      # If the entire list is traversed with out fail return True and the sum of all edges
+      return (True, f'${str(travel_sum)}')
+    # If vertex not in graph return false
+    return (False, '$0')
+
+
   def __traverse(self, vertex, action):
     """
     Takes in a starting vertex and an action. Will traverse the graph in a breath first order from the given vertex. The action is a function that is acted on each vertex.
@@ -141,6 +179,15 @@ class Graph:
       raise KeyError(f'Vertex {vertex} is not in graph')
     return True
 
+
+  def __len__(self):
+    return len(self._adjacency_list)
+
+
+##################
+## Vertex Class ##
+##################
+
 class Vertex:
   """
   A simple vertex class that is used in the graph.
@@ -150,6 +197,11 @@ class Vertex:
 
   def __str__(self):
     return self.value
+
+
+#################
+## Queue Class ##
+#################
 
 class Queue:
   """

@@ -62,3 +62,23 @@ My approach is to create 2 functions. The first is to do a traversal from a give
 `breath_first()`
 - Time: `O(n)`
 - Space: `O(n)`
+
+## Get Edges
+[Tests](./test_get_edges.py)
+### Challenge
+Create a function that takes in a list of vertex values as strings and returns `True/False` if the vertices can be traversed in order. Next if the if `True` is returned also return the sum of the edge weights. If `False` is returned just return 0.
+### Approach
+Like many of my challenges I used a helper function. This function takes in a list and a string an will return if a vertex with that value are in the list. This works for both the keys list that is only contains vertices as well as the neighbor list of tuples. The rest of the logic is far more straight forward where the it keeps checking the neighbors of each node to see if the connection can be made and if not returning `False`. If the end of the list is reached the `True` and the sum of weights is returned instead.
+### API
+`get_edge`
+- In: `(<List> of Vertex Values)`
+- Out: `(True/False, '$<Int>')`
+### Efficiency
+`get_edge`
+- Time: `O(n`<sup>`2`</sup>`)`
+- Space: `O(1)`
+#### Images
+![**IMAGE ERROR**](../../assets/getedges1.jpg)
+
+![**IMAGE ERROR**](../../assets/getedges2.jpg)
+
