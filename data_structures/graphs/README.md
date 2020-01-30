@@ -82,3 +82,20 @@ Like many of my challenges I used a helper function. This function takes in a li
 
 ![**IMAGE ERROR**](../../assets/getedges2.jpg)
 
+# <br>
+## Depth First Traversal
+[Tests](./test_depth_first.py)
+### Challenge
+Create a method to traverses a tree in depth first order and returns a list of the values at each vertex that's visited.
+### Approach
+**Surprise!!** I created a helper function. This is the `__recurse` function that takes a vertex and an action. This function starts at the given vertex and travels the graph looking at each position. At each vertex preform the action. Then recuse to each non visited vertex.
+### API
+`depth_first`
+- In: `<Vertex>`
+- Out: `<List>`
+### Efficiency
+`depth_first`
+- Time: `O(n)`
+- Space: `O(n)`
+![**Image Error**](../../assets/depthFirst1.jpg)
+![**Image Error**](../../assets/depthFirst2.jpg)
