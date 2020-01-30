@@ -36,7 +36,7 @@ class Graph:
     self._adjacency_list[v] = []
     return v
 
-  def add_edge(self, start, end, weight=1):
+  def add_edge(self, start, end, weight=0):
     """
     Takes in 2 vertices and an optional weight as an Int. Adds the connection from the start node to the end node.
     If either vertice is not already in the graph it raises an error.
@@ -71,7 +71,7 @@ class Graph:
     In: None
     Out: list of all vertices in the graph
     """
-    return self._adjacency_list.keys()
+    return list(self._adjacency_list.keys())
 
 
   def get_neighbors(self, vertex):
@@ -101,20 +101,37 @@ class Graph:
     return output
 
 
-  def add_double_edge(self, vertex1, vertex2, weight=1):
+  def depth_first(self, vertex):
+    """
+    Traverse the tree in depth first order adding the value of each vertex to the output list.
+    In: <Vertex>
+    Out: <list> of values
+    """
+    output = []
+
+    def action(vertex):
+      output.append(vertex.value)
+
+    self.__recurse(vertex, action)
+
+    return output
+
+
+  def add_double_edge(self, vertex1, vertex2, weight=0, weight2=None):
     """
     Similar to add edge just adds it adds one going both ways.
     In: 2 vertices and a weight
     Out: None
     """
+    weight2 = weight if weight2 == None else weight2 or 0
     self.add_edge(vertex1, vertex2, weight)
-    self.add_edge(vertex2, vertex1, weight)
+    self.add_edge(vertex2, vertex1, weight2)
 
 
   def get_edge(self, v_lst):
     """
     Takes in a list of values in the graph and retruns the True or False on if you can fallow all the Vertices and the sum of the weight when traveling between them.
-    In: List of names contained in the vertices.
+    In: List of values contained in the vertices.
     Out: tuple(True/False, sum <int>)
     """
 
@@ -122,17 +139,17 @@ class Graph:
       """Helper function for the get edge method that can find it the string value is a value of a neighbor node"""
       for vertex in lst:
         # Used when looking at the list of edges for a vertex
-        if isinstance(vertex, tuple):
-          if vertex[0].value == value:
+        if isinstance(vertex, Vertex):
+          if vertex.value == value:
             return vertex
         # Used when trying to see if the vertex is in the graph at all.
-        elif vertex.value == value:
+        elif vertex[0].value == value:
           return vertex
       # Need to return the value and price for the inner loop
       return False, 0
 
     # Check if the first value is the value of a vertex in the graph.
-    current = contains_vertex(v_lst[0], self._adjacency_list.keys())
+    current = contains_vertex(v_lst[0], self.get_vertices())
     if isinstance(current, Vertex):
       travel_sum = 0
       # Ignore the first position because it's handeled above
@@ -169,6 +186,24 @@ class Graph:
           q.enqueue(vert)
 
       action(current)
+
+
+  def __recurse(self, vertex, action):
+    """
+    A recursive helper function that takes a starting vertex and action. Then traverses the graph in an in order manner applying the action the current vertex.
+    """
+    visited = set()
+
+    def recurse(vertex, action):
+
+      visited.add(vertex)
+      action(vertex)
+
+      for vert in self.get_neighbors(vertex):
+        if vert[0] not in visited:
+          recurse(vert[0], action)
+
+    recurse(vertex, action)
 
 
   def __valid_vertex(self, vertex):
@@ -214,6 +249,20 @@ class Queue:
     self.dq.appendleft(value)
 
   def dequeue(self):
+    return self.dq.pop()
+
+  def empty(self):
+    return len(self.dq) == 0
+
+class Stack:
+  """Stack class for the implamentation of the depth first"""
+  def __init__(self):
+    self.dq = deque()
+
+  def push(self, value):
+    self.dq.append(value)
+
+  def pop(self):
     return self.dq.pop()
 
   def empty(self):
